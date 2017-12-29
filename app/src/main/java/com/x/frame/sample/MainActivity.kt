@@ -3,18 +3,21 @@ package com.x.frame.sample
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.v7.app.AppCompatActivity
+import android.widget.SeekBar
 import com.x.frame.constraintLayout
-import com.x.frame.logError
+import com.x.frame.spacingExtra
+import com.x.frame.spacingMultiplier
+import com.x.frame.textColor
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var t1 = System.currentTimeMillis()
-        setContentView(createView())
-        var t2 = System.currentTimeMillis()
-
-        logError(t2 - t1)
+        setContentView(R.layout.activity_main)
+//        var t1 = System.currentTimeMillis()
+//        setContentView(createView())
+//        var t2 = System.currentTimeMillis()
+//        logError(t2 - t1)
     }
 
     inline fun createView() = constraintLayout {
@@ -33,8 +36,8 @@ class MainActivity : AppCompatActivity() {
             it.leftToLeft = R.id.root
             it.rightToLeft = R.id.text2
             it.horizontalChainStyle = ConstraintLayout.LayoutParams.CHAIN_PACKED
-            setTextColor(0xff000000.toInt())
-            text = "薛"
+            text = "薛\n力\n于"
+            textColor = R.drawable.blacklight_enable
             textSize = 30f
         }
 
@@ -44,9 +47,11 @@ class MainActivity : AppCompatActivity() {
             it.leftToRight = R.id.text1
             it.rightToLeft = R.id.text3
             it.horizontalChainStyle = ConstraintLayout.LayoutParams.CHAIN_PACKED
-            setTextColor(0xff000000.toInt())
-            text = "力"
+            text = "薛\n力\n于"
+            textColor = R.color.colorPrimaryDark
             textSize = 30f
+            spacingExtra = 0f
+            spacingMultiplier = 0.8f
         }
 
         textView {
@@ -55,9 +60,31 @@ class MainActivity : AppCompatActivity() {
             it.leftToRight = R.id.text2
             it.rightToRight = R.id.root
             it.horizontalChainStyle = ConstraintLayout.LayoutParams.CHAIN_PACKED
-            setTextColor(0xff000000.toInt())
-            text = "于"
+            text = "薛\n力\n于"
+            textColor = 0xff00ffff
             textSize = 30f
+            spacingExtra = 0f
+            spacingMultiplier = 2f
+        }
+
+        seekBar {
+            id = R.id.img1
+            setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+                override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+
+                }
+
+                override fun onStartTrackingTouch(p0: SeekBar?) {
+
+                }
+
+                override fun onStopTrackingTouch(p0: SeekBar?) {
+
+                }
+
+            })
         }
     }
 }
+
+

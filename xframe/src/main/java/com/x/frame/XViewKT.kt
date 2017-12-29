@@ -19,6 +19,18 @@ import android.widget.*
  * Created by xfilshy on 17/9/26.
  */
 
+var View.backgroundColor: Int
+    get() = throwGetException()
+    set(value) = setBackgroundColor(value)
+
+var View.backgroundResource: Int
+    get() = throwGetException()
+    set(value) = setBackgroundResource(value)
+
+var View.onClick: (View) -> Unit
+    get() = throwGetException()
+    set(value) = setOnClickListener(value)
+
 interface _ViewInterfaceKT<in V : ViewGroup, out LP : ViewGroup.LayoutParams, out LPC : (ViewGroup.MarginLayoutParams) -> LP> {
 
     val lpc: LPC

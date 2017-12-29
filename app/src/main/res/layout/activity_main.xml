@@ -51,6 +51,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guide" />
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:tint="#ffff0000"
+        android:tintMode="src_atop" />
 
 </android.support.constraint.ConstraintLayout>

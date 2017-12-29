@@ -4,4 +4,7 @@
     <item name="text1" type="id" />
     <item name="text2" type="id" />
     <item name="text3" type="id" />
+    <item name="img1" type="id" />
+    <item name="img2" type="id" />
+    <item name="img3" type="id" />
 </resources>
